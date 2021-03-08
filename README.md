@@ -3,6 +3,7 @@
 This is the official code of the ICRL 2021 paper *Intrinsic-Extrinsic Convolution and Pooling for Learning on 3D Protein Structures*.
 
 ![teaser](https://github.com/phermosilla/IEConv_proteins/blob/master/imgs/conv.png)
+
 ![teaser](https://github.com/phermosilla/IEConv_proteins/blob/master/imgs/pooling.png)
 
 ### Citation
