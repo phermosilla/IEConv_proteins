@@ -1,3 +1,7 @@
+### Intrinsic-Extrinsic Convolution and Pooling for Learning on 3D Protein Structures
+
+This is the official code of the ICRL 2021 paper *Intrinsic-Extrinsic Convolution and Pooling for Learning on 3D Protein Structures*.
+
 ### Instalation
 
 Open a docker container with the following command:
@@ -17,15 +21,25 @@ We already provide a compiled version of the library for the docker container, s
 
 In the following links the different datasets can be downloaded:
 
-Enzymes vs Non-Enzymes: 
-    https://drive.google.com/uc?export=download&id=1KTs5cUYhG60C6WagFp4Pg8xeMgvbLfhB
-    Extract content in: Datasets/data/ProteinsDD/
-Scope 1.75:
-    https://drive.google.com/uc?export=download&id=1chZAkaZlEBaOcjHQ3OUOdiKZqIn36qar
-    Extract content in: Datasets/data/HomologyTAPE/
-Protein function:
-    https://drive.google.com/uc?export=download&id=1udP6_90WYkwkvL1LwqIAzf9ibegBJ8rI
-    Extract content in: Datasets/data/ProtFunct
+* **Enzymes vs Non-Enzymes**: 
+
+https://drive.google.com/uc?export=download&id=1KTs5cUYhG60C6WagFp4Pg8xeMgvbLfhB
+
+Extract content in: Datasets/data/ProteinsDD/
+
+
+* **Scope 1.75**:
+
+https://drive.google.com/uc?export=download&id=1chZAkaZlEBaOcjHQ3OUOdiKZqIn36qar
+
+Extract content in: Datasets/data/HomologyTAPE/
+
+* **Protein function**:
+
+https://drive.google.com/uc?export=download&id=1udP6_90WYkwkvL1LwqIAzf9ibegBJ8rI
+
+Extract content in: Datasets/data/ProtFunct
+
 
 ### Train Ennzymes vs Non-Enzymes
 
@@ -66,3 +80,16 @@ Execute the following commands to train a network on the task:
 To evaluate the trained model execute:
 
     python Test.py --configFile confs/test.ini
+
+### Trained models comming soon
+
+### Citation
+
+If you find this code useful please consider citing us:
+
+        @article{hermosilla2021ieconv,
+          title={Intrinsic-Extrinsic Convolution and Pooling for Learning on 3D Protein Structures},
+          author={Hermosilla, Pedro and Schäfer, Marco and Lang, Matěj and Fackelmann, Gloria and Vázquez, Pere Pau and Kozlíková, Barbora and Krone, Michael and Ritschel, Tobias and Ropinski, Timo},
+          journal={International Conference on Learning Representations},
+          year={2021}
+        }
