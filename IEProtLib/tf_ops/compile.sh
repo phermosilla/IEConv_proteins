@@ -1,0 +1,16 @@
+rm build/*
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/compute_keys.cu -o build/compute_keys.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/build_grid_ds.cu -o build/build_grid_ds.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/find_ranges_grid_ds.cu -o build/find_ranges_grid_ds.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/count_neighbors.cu -o build/count_neighbors.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/elem_wise_min.cu -o build/elem_wise_min.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/scan_alg.cu -o build/scan_alg.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/store_neighbors.cu -o build/store_neighbors.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/basis/basis_utils.cu -o build/basis_utils.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/basis/basis_proj.cu -o build/basis_proj.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/basis/basis_proj_grads.cu -o build/basis_proj_grads.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/basis/basis_hproj_bilateral.cu -o build/basis_hproj_bilateral.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/graph_aggregation.cu -o build/graph_aggregation.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/compute_topo_dist.cu -o build/compute_topo_dist.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+/usr/local/cuda/bin/nvcc -std=c++11  cu/src/protein_pooling.cu -o build/protein_pooling.cu.o -Icu/header -Icc/header -c -O2 -DGOOGLE_CUDA=1 -x cu -Xcompiler -fPIC
+g++ -std=c++11 build/compute_keys.cu.o  build/build_grid_ds.cu.o  build/find_ranges_grid_ds.cu.o  build/count_neighbors.cu.o  build/elem_wise_min.cu.o  build/scan_alg.cu.o  build/store_neighbors.cu.o  build/graph_aggregation.cu.o  build/compute_topo_dist.cu.o  build/protein_pooling.cu.o  build/basis_utils.cu.o  build/basis_proj.cu.o  build/basis_proj_grads.cu.o  build/basis_hproj_bilateral.cu.o  cc/src/tf_gpu_device.cpp  cc/src/compute_keys.cpp  cc/src/build_grid_ds.cpp  cc/src/find_neighbors.cpp  cc/src/basis_proj_bilateral.cpp  cc/src/graph_aggregation.cpp  cc/src/compute_topo_dist.cpp  cc/src/protein_pooling.cpp -o build/IEProtLib.so -shared -fPIC -Icc/header -Icu/header -I/usr/local/lib/python3.5/dist-packages/tensorflow/include -D_GLIBCXX_USE_CXX11_ABI=0 -I/usr/local/cuda/include -lcudart -L /usr/local/cuda/lib64/ -L/usr/local/lib/python3.5/dist-packages/tensorflow -ltensorflow_framework -O2

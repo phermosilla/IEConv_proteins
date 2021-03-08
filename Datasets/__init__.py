@@ -1,0 +1,3 @@
+from .py.ProtFunctDataSet import ProtFunctDataSet
+from .py.ProtClassProteinsDB import ProtClassProteinsDB
+from .py.ProtClassHomologyDataSet import ProtClassHomologyDataSet
